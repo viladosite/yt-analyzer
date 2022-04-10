@@ -102,21 +102,26 @@ section {
     height: 500px;
 }
 
-#overTabs{
-    background-color: aquamarine;
+#overContent{
+    border: 1px solid brown;
+    height: 100%;
 }
 
-#overTabs ul {
+#overTabs{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 10px;
 }
 
-#overTabs ul li {
+#overTabs div {
     width: 100%;
-    padding: 0 20px;
+    padding: 5px 15px;
+    border-bottom: solid 1px brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
+
 
 .activeTab{
     border: solid brown 1px;
@@ -124,14 +129,22 @@ section {
     color: white;
 }
 
+.activeTab span{
+    color: white;
+}
+
 .inactiveTab{
-    border: solid brown 1px;
+    border-left: solid brown 1px;
 }
 
 
 /* Download Section */
 #download{
     height: 150px;
+}
+
+#downContent{
+    border: solid 1px brown;
 }
 
 #downloadButtons {
