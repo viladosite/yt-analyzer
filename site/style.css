@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Anek Tamil', sans-serif;
+    color: brown;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+
+/* TEXTS */
+li {
+    line-height: 40px;
+}
+
+
+
+/* HEADER */
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: darksalmon;
+}
+
+header div {
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Header boxes */
+#language{
+    width: 10%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+#langOptions {
+    width: max-content;
+    height: fit-content;
+    background-color: darksalmon;
+    float: left;
+    z-index: 0;
+}
+
+#langName{
+    margin: 0 10px;
+}
+
+
+
+
+#title{
+    width: 40%;
+}
+
+#channel{
+    width: 50%;
+    padding: 0 30px;
+    justify-content: end;
+}
+
+
+
+
+/* Icons */
+.iconContainer {
+    width: auto;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+i {
+    color:brown;
+}
+
+
+/* Inputs */
+.textInput{
+    border-radius: 20px;
+    padding: 5px 15px;
+    border-style: none;
+
+}
+
+#channelSelect {
+    width: 100%;
+}
+
+/* SECTIONS */
+section {
+    padding: 20px;
+}
+
+
+/* Overview Section */
+#overview{
+    height: 500px;
+}
+
+#overTabs{
+    background-color: aquamarine;
+}
+
+#overTabs ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#overTabs ul li {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.activeTab{
+    border: solid brown 1px;
+    background-color: brown;
+    color: white;
+}
+
+.inactiveTab{
+    border: solid brown 1px;
+}
+
+
+/* Download Section */
+#download{
+    height: 150px;
+}
+
+#downloadButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    background-color: grey;
+}
+
+#social{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* UTILS */
+
+.none {
+    display: none;
+}

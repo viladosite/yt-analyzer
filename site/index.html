@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anek+Tamil">
+        <script src="functions.js"></script>
+        <script src="https://kit.fontawesome.com/72f776e9bb.js" crossorigin="anonymous"></script>
+        <title>Document</title>
+    </head>
+    <header>
+        <div id="language">
+            <div class="iconContainer" onClick="langMenu()">
+                <i id="langFlag" class="fa-solid fa-flag-usa"></i>
+                <span id="langName">en-us</span>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div id="langOptions" class="none">
+                <ul>
+                    <li id="pt-br" onclick="changeLang('pt-br')">[pt-br] Português do Brasil</li>
+                    <li id="en-us" onclick="changeLang('en-us')">[en-us] American English</li>
+                </ul>
+            </div>
+        </div>
+        <div id="title">
+            <h1>YT Analyze</h1>
+        </div>
+        <div id="channel">
+            <input id="channelSelect" class="textInput" type="text" placeholder="https://www.youtube.com/channel/XXXXXXXXXXXXX">
+            <div class="iconContainer" onClick="searchChannel()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+    </header>
+    <body>
+        <section id="overview">
+            <div id="overTabs">
+                <ul>
+                    <li class="activeTab">Overview for <span id="channelTitle">channel X</span></li>
+                    <li class="inactiveTab">Graphics and Statistics</li>
+                    <li class="inactiveTab">Analysis</li>
+                </ul>
+            </div>
+            <div id="overAbout">
+                About
+            </div>
+            <div id="overBasicData">
+                Visualizações Totais<br>
+                Inscritos<br>
+                Quantidade de séries/playlists<br>
+                <br>
+                MÉDIAS<br>
+                [MÉDIA] Duração dos vídeos<br>
+                [MÉDIA] Likes dos vídeos<br>
+                [MÉDIA] Comentários nos vídeos<br>
+                <br>
+                CAMPEÕES<br>
+                [TOP] Vídeo mais assistido<br>
+                [TOP] Vídeo mais comentado<br>
+                [TOP] Vídeo mais curtido<br>
+
+            </div>
+        </section>
+        <section id="download">
+            <div>
+                <h2>Download and export</h2>
+            </div>
+            <div id="downloadButtons">
+                <div class="iconContainer">
+                    <i class="fa-solid fa-file-pdf fa-lg"></i>
+                    <span>&nbsp;Download PDF</span>
+                </div>
+            
+                <div class="iconContainer">
+                    <i class="fa-solid fa-file-excel fa-lg"></i>
+                    <span>&nbsp;Download XLSX</span>
+                </div>
+
+                <div class="iconContainer">
+                    <i class="fa-solid fa-file-lines fa-lg"></i>
+                    <span>&nbsp;Download TXT</span>
+                </div>
+
+                <div class="iconContainer">
+                    <i class="fa-solid fa-file-csv fa-lg"></i>
+                    <span>&nbsp;Download CSV</span>
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <div id="social">
+            <a href="https://www.linkedin.com/in/diogo-fagundes/" target="_blank">
+                <div class="iconContainer"><i class="fa-brands fa-linkedin fa-lg"></i></div>
+            </a>
+            
+            <a href="https://www.facebook.com/diogo.fagundes/" target="_blank">
+                <div class="iconContainer"><i class="fa-brands fa-facebook fa-lg"></i></div>
+            </a>
+
+            <a href="https://www.instagram.com/djmacloud/" target="_blank">
+                <div class="iconContainer"><i class="fa-brands fa-instagram fa-lg"></i></div>
+            </a>
+
+            <a href="https://api.whatsapp.com/send?phone=552124848449&text=Hi%2C%20I%20would%20like%20to%20talk%20to%20you%20about%20yt-analyze%20Diogo!" target="_blank">
+                <div class="iconContainer"><i class="fa-brands fa-whatsapp fa-lg"></i></div>
+            </a>
+        </div>
+    </footer>
+</html>

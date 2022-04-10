@@ -1,0 +1,30 @@
+{
+  "name": "yt-analyzer",
+  "version": "1.0.0",
+  "description": "A tool to analyze basic information about youtube channels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viladosite/yt-analyzer.git"
+  },
+  "keywords": [
+    "yt",
+    "youtube",
+    "ytanalyze",
+    "analyze",
+    "statistic"
+  ],
+  "author": "Diogo Fagundes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viladosite/yt-analyzer/issues"
+  },
+  "homepage": "https://github.com/viladosite/yt-analyzer#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
