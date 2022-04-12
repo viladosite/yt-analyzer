@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en-us">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anek+Tamil">
         <script src="functions.js"></script>
+        <script src="js/langfunctions.js"></script>
+        <script src="js/datafunctions.js"></script>
         <script src="https://kit.fontawesome.com/72f776e9bb.js" crossorigin="anonymous"></script>
         <title>Document</title>
     </head>
@@ -24,32 +26,40 @@
                 </ul>
             </div>
         </div>
-        <div id="title">
+        <div id="title" onclick="location.reload();">
             <h1>YT Analyze</h1>
         </div>
         <div id="config">
             <div class="iconContainer">
                 <i class="fa-solid fa-circle-question"></i>
             </div>
-            <input id="ytKey" type="text" class="textInput" placeholder="Youtube Key Here">
+            <input id="ytKey" type="text" class="textInput" placeholder="Youtube Key Here" value="AIzaSyC8_l4yakCse6xv3ADLJTcY3S68xxr89R4">
         </div>
         <div id="channel">
-            <input id="channelSelect" class="textInput" type="text" placeholder="https://www.youtube.com/channel/XXXXXXXXXXXXX">
+            <input id="channelSelect" class="textInput" type="text" placeholder="https://www.youtube.com/channel/XXXXXXXXXXXXX" value="https://www.youtube.com/channel/UCEWHPFNilsT0IfQfutVzsag">
             <div class="iconContainer" onClick="searchChannel()">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>
     </header>
     <body>
-        <section id="overview">
-            <div id="overContent">
-                <div id="overTabs">
+        <section id="content">
+            <div id="contentBox">
+                <div id="tabs">
                     <div class="activeTab">Overview&nbsp;<span id="channelTitle"></span></div>
                     <div class="inactiveTab">Graphics and Statistics</div>
                     <div class="inactiveTab">Analysis</div>
                 </div>
                 <div id="tabContent">
-
+                    <h3>Welcome to YT Analyze in <script>getLangTerm('name');</script> </h3>
+                    <p>YT Analyze is a simple tool to gather data and statistics about Youtube channel.</p>
+                    <p>To use YT Analyze you'll need a Youtube Key and a youtube channel URL (the one with the channel ID).</p>
+                    <br>
+                    <h3>How to obtain an youtube key?</h3>
+                    <p>Coming soon</p>
+                    <br>
+                    <h3>How can I find the right youtube channel URL?</h3>
+                    <p>To get the youtube channel URL you'll need you can just access any video of the channel and then look fot the channel's name and logo just bellow the main video frame. Right-click over the channel's name or logo and select "Copy link address".</p>
                 </div>
             </div>
         </section>
