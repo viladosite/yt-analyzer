@@ -13,6 +13,10 @@ li {
     line-height: 40px;
 }
 
+h2 {
+    margin-left: 10px;
+}
+
 
 
 /* HEADER */
@@ -29,35 +33,45 @@ header div {
     align-items: center;
 }
 
-/* Header boxes */
+/* HEADE BOXES */
+
+/* Language */
 #language{
-    width: 10%;
+    width: 200px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
 }
-
 #langOptions {
+    position: absolute;
+    margin-top: 45px;
+    padding: 0 15px;
     width: max-content;
     height: fit-content;
     background-color: darksalmon;
     float: left;
     z-index: 0;
 }
-
 #langName{
     margin: 0 10px;
 }
 
 
-
-
+/* Title */
 #title{
     width: 40%;
 }
 
+
+/* Config */
+#config{
+    width: 40%;
+}
+
+
+/* Channel */
 #channel{
     width: 50%;
     padding: 0 30px;
@@ -67,7 +81,7 @@ header div {
 
 
 
-/* Icons */
+/* ICONS */
 .iconContainer {
     width: auto;
     padding: 10px 15px;
@@ -79,15 +93,17 @@ i {
 }
 
 
-/* Inputs */
+/* INPUTS */
 .textInput{
     border-radius: 20px;
     padding: 5px 15px;
     border-style: none;
 
 }
-
 #channelSelect {
+    width: 100%;
+}
+#ytKey{
     width: 100%;
 }
 
@@ -117,6 +133,29 @@ section {
     justify-content: center;
 }
 
+#overTabContent{
+    padding: 20px 25px 15px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+#overTabBasic{
+    width: 10%;
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#overTabDetails, #overTabNumbers{
+    width: 40%;
+}
+
+
+/* TABS */
 
 .activeTab{
     border: solid brown 1px;

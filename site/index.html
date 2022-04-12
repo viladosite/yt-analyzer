@@ -12,7 +12,7 @@
     </head>
     <header>
         <div id="language">
-            <div class="iconContainer" onClick="langMenu()">
+            <div class="iconContainer" onClick="toggleMenu('langOptions')">
                 <i id="langFlag" class="fa-solid fa-flag-usa"></i>
                 <span id="langName">en-us</span>
                 <i class="fa-solid fa-caret-down"></i>
@@ -26,6 +26,12 @@
         </div>
         <div id="title">
             <h1>YT Analyze</h1>
+        </div>
+        <div id="config">
+            <div class="iconContainer">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <input id="ytKey" type="text" class="textInput" placeholder="Youtube Key Here">
         </div>
         <div id="channel">
             <input id="channelSelect" class="textInput" type="text" placeholder="https://www.youtube.com/channel/XXXXXXXXXXXXX">
