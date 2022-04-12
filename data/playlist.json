@@ -1,0 +1,11 @@
+{
+    "name":"string",
+    "description":"string",
+    "totalViews":"int",
+    "videosQt":"int",
+    "lastUpdate":"date",
+    "thumbnail":"int",
+    "averageVideoTime":"int",
+    "averageVideoLikes":"int",
+    "averageVideoComments":"int"
+}
