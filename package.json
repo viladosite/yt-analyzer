@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/viladosite/yt-analyzer#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "express": "^4.17.3"
   }
 }
