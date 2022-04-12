@@ -1,7 +1,11 @@
+// LANG MENU FUNCTIONS
+
 function langMenu(){
     let menu = document.getElementById('langOptions');
     menu.classList.toggle("none")
 }
+
+
 
 function changeLang(lang){
     let menu = document.getElementById('langOptions');
@@ -20,69 +24,80 @@ function changeLang(lang){
     }
 }
 
-function searchChannel(){
+// GET DATA FUNCTIONS
+
+
+function getKey(){
+    var key = 'youtubekeyhere';
+    return key;
+}
+
+
+function getIdFromURL(url){
+    if (url.includes('https://www.youtube.com/channel/')){
+        var channelId = url.split("https://www.youtube.com/channel/");
+    }
+    else if (url.includes('https://www.youtube.com/c/')){
+        var channelId = url.split("https://www.youtube.com/c/");
+    }
+    return channelId;
+}
+
+
+
+async function getChannelData(channelId, userKey){
+    return fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=id,snippet,brandingSettings,contentDetails,statistics,topicDetails&id=${channelId}&key=${userKey}`).then(result => result.json());
+}
+
+
+
+// MODEL FUNCTIONS
+
+function getChannelModel(){
+    return fetch('/channel').then(result => result.json());
+}
+
+function setChannel(channelObj){
+    var rawChannel = channelObj;
+    var channel = getChannelModel();
+
+    
+}
+
+
+
+async function searchChannel(){
     var channelURL = document.getElementById('channelSelect').value;
+    var key = getKey();
+
     if (channelURL == '' || channelURL == null){
         document.getElementById('tabContent').innerHTML = 'You need to provide a valid channel URL to search';
     } else {
-        if (channelURL.includes('https://www.youtube.com/channel/')){
-            var channelSplit = channelURL.split("https://www.youtube.com/channel/");
-        }
-        else if (channelURL.includes('https://www.youtube.com/c/')){
-            var channelSplit = channelURL.split("https://www.youtube.com/c/");
-        }
+        var id = getIdFromURL(channelURL);
+        var channelData = await getChannelData(id, key);
 
-        var channelName = channelSplit[1];
         var templateAbout = `
-        <div id="overAbout">
-            About ${channelName} channel
-            <br>
-            <br>
-            <br>
-        </div>
-        <div id="overBasicData">
-            Visualizações Totais<br>
-            Inscritos<br>
-            Quantidade de séries/playlists<br>
-            <br>
-            MÉDIAS<br>
-            [MÉDIA] Duração dos vídeos<br>
-            [MÉDIA] Likes dos vídeos<br>
-            [MÉDIA] Comentários nos vídeos<br>
-            <br>
-            CAMPEÕES<br>
-            [TOP] Vídeo mais assistido<br>
-            [TOP] Vídeo mais comentado<br>
-            [TOP] Vídeo mais curtido<br>
-        </div>
+            <div id="overAbout">
+                About ${id} channel
+                <br>
+                <br>
+                <br>
+            </div>
+            <div id="overBasicData">
+                ${channelData}
+            </div>
         `;
 
-        document.getElementById('channelTitle').innerHTML = '- ' + channelName;
+        document.getElementById('channelTitle').innerHTML = '- ' + id;
         document.getElementById('tabContent').innerHTML = templateAbout;
     }
 }
 
 
 function searchContent(){
-/*     
-    <div id="overAbout">
-        About the channel
-    </div>
-    <div id="overBasicData">
-        Visualizações Totais<br>
-        Inscritos<br>
-        Quantidade de séries/playlists<br>
-        <br>
-        MÉDIAS<br>
-        [MÉDIA] Duração dos vídeos<br>
-        [MÉDIA] Likes dos vídeos<br>
-        [MÉDIA] Comentários nos vídeos<br>
-        <br>
-        CAMPEÕES<br>
-        [TOP] Vídeo mais assistido<br>
-        [TOP] Vídeo mais comentado<br>
-        [TOP] Vídeo mais curtido<br>
-        
-    </div>
-*/
+
+}
+
+function getVideo(id){
+    
 }

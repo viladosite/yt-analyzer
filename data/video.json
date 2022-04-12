@@ -1,0 +1,10 @@
+{
+    "name":"string",
+    "description":"string",
+    "totalViews":"int",
+    "totalLikes":"int",
+    "totalDislikes":"int",
+    "totalComments":"int",
+    "time":"int",
+    "thumbnail":"int"
+}
