@@ -33,6 +33,8 @@ function setChannel(channelObj){
     var channel = [];
 
     channel.push({
+        id:channelObj.items[0].id,
+        customUrl:channelObj.items[0].snippet.customUrl,
         name:channelObj.items[0].snippet.title,
         description:channelObj.items[0].snippet.description,
         dateCreated:channelObj.items[0].snippet.publishedAt,
