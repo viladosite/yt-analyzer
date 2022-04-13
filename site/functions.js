@@ -5,6 +5,55 @@ function toggleMenu(menuName){
     menu.classList.toggle("none")
 }
 
+// TABS FUNCTIONS
+// channelObj: json of channel to load on tabs
+function loadTabs(channelObj){
+    var tabOverTemplate = `
+        <div id="overTabTitle">
+            <h2>About ${channelObj.name}'s channel</h2>
+        </div>
+        <div id="overTabContent">
+            <div id="overTabBasic">
+                <a href="https://www.youtube.com/channel/${channelObj.id}" target="_blank">
+                    <img src="${channelObj.avatar}">
+                    <h2>${channelObj.name}</h2>
+                </a>
+                <br>
+                <h3>Creation Date:</h3>
+                <p>${channelObj.dateCreated}</p>
+                <h3>Total views:</h3>
+                <p>${channelObj.totalViews}</p>
+                <h3>Videos Count:</h3>
+                <p>${channelObj.videosQt}</p>
+                <h3>Subscriptions:</h3>
+                <p>${channelObj.subscriptions}</p>
+            </div>
+            <div id="overTabDetails">
+                <h3>Description:</h3>
+                <p>${channelObj.description}</p>
+            </div>
+            <div id="id="overTabNumbers"">
+                <h3>Links:</h3>
+                <p>${channelObj.link}</p>
+                <h3>Average Video Time:</h3>
+                <p>${channelObj.averageVideoTime}</p>
+                <h3>Average Video Likes:</h3>
+                <p>${channelObj.averageVideoLikes}</p>
+                <h3>Average Video Comments:</h3>
+                <p>${channelObj.averageVideoComments}</p>
+            </div>
+        </div>
+    `;
+
+    document.getElementById(`channelTitle`).textContent = ' - ' + channelObj.name;
+    document.getElementById(`tab-overview-content`).innerHTML = tabOverTemplate;
+    document.getElementById(`tab-graphics-content`).innerHTML = "Em breve";
+    document.getElementById(`tab-analysis-content`).innerHTML = "Em breve";
+}
+
+function tabChange(tabId){
+
+}
 
 // SEARCH FUNCTIONS
 async function searchChannel(){
@@ -19,14 +68,17 @@ async function searchChannel(){
         var channelData = await getChannelData(key, id);
         channel = setChannel(channelData)[0];
 
-        var templateAbout = `
+/*
+            var templateAbout = `
             <div id="overTabTitle">
                 <h2>About ${channel.name}'s channel</h2>
             </div>
             <div id="overTabContent">
                 <div id="overTabBasic">
-                    <img src="${channel.avatar}">
-                    <h2>${channel.name}</h2>
+                    <a href="https://www.youtube.com/channel/${channel.id}" target="_blank">
+                        <img src="${channel.avatar}">
+                        <h2>${channel.name}</h2>
+                    </a>
                     <br>
                     <h3>Creation Date:</h3>
                     <p>${channel.dateCreated}</p>
@@ -54,13 +106,12 @@ async function searchChannel(){
             </div>
         `;
 
-        console.log(channel);
         document.getElementById('channelTitle').innerHTML = '- ' + channel.name;
         document.getElementById('tabContent').innerHTML = templateAbout;
+ */
+
     }
-}
 
-
-function searchContent(){
-
+    loadTabs(channel);
+    tabChange('overview');
 }

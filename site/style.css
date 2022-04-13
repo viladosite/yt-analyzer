@@ -32,7 +32,7 @@ header div {
     align-items: center;
 }
 
-/* HEADE BOXES */
+/* HEADER BOXES */
 
 /* Language */
 #language{
@@ -113,52 +113,43 @@ section {
     padding: 20px;
 }
 
-/* TABS */
-
-.activeTab{
-    border: solid brown 1px;
-    background-color: brown;
-    color: white;
+/* CONTENT SECTION */
+#content{
+    
 }
-
-.activeTab span{
-    color: white;
+#contentBox{
+    border: 1px solid brown;
 }
-
-.inactiveTab{
-    border-left: solid brown 1px;
-}
-
 #tabContent{
     padding: 20px 25px 15px 25px;
 }
 
-
-#contentBox{
-    border: 1px solid brown;
-}
-
-
-/* Content Section */
-#content{
-    
-}
-
+/* TABS */
 #tabs{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-
 #tabs div {
     width: 100%;
     padding: 5px 15px;
     border-bottom: solid 1px brown;
+    border-left: solid 1px brown;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    cursor: pointer;
+}
+.activeTab{
+    border: solid brown 1px;
+    background-color: brown;
+    color: white;
+}
+.activeTab span{
+    color: white;
 }
 
+/* TAB OVERVIEW */
 #overTabContent{
     padding: 20px;
     display: flex;
@@ -176,6 +167,11 @@ section {
     align-items: center;
 }
 
+#overTabBasic a {
+    display: inline-block;
+    text-align:center;
+}
+
 #overTabDetails{
     width: 40%;
 }
@@ -185,7 +181,7 @@ section {
 }
 
 
-/* Download Section */
+/* DOWNLOAD SECTION */
 #download{
     height: 150px;
 }

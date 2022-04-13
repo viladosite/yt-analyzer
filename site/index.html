@@ -46,20 +46,26 @@
         <section id="content">
             <div id="contentBox">
                 <div id="tabs">
-                    <div class="activeTab">Overview&nbsp;<span id="channelTitle"></span></div>
-                    <div class="inactiveTab">Graphics and Statistics</div>
-                    <div class="inactiveTab">Analysis</div>
+                    <div id="tab-overview" class="activeTab" onclick="tabChange(this.id)">Overview&nbsp;<span id="channelTitle"></span></div>
+                    <div id="tab-graphics" onclick="tabChange(this.id)">Graphics and Statistics</div>
+                    <div id="tab-analysis" onclick="tabChange(this.id)">Analysis</div>
                 </div>
                 <div id="tabContent">
-                    <h3>Welcome to YT Analyze in <script>getLangTerm('name');</script> </h3>
-                    <p>YT Analyze is a simple tool to gather data and statistics about Youtube channel.</p>
-                    <p>To use YT Analyze you'll need a Youtube Key and a youtube channel URL (the one with the channel ID).</p>
-                    <br>
-                    <h3>How to obtain an youtube key?</h3>
-                    <p>Coming soon</p>
-                    <br>
-                    <h3>How can I find the right youtube channel URL?</h3>
-                    <p>To get the youtube channel URL you'll need you can just access any video of the channel and then look fot the channel's name and logo just bellow the main video frame. Right-click over the channel's name or logo and select "Copy link address".</p>
+                    <div id="tab-start-content" class="tab-content">
+                        <h3>Welcome to YT Analyze</h3>
+                        <p>YT Analyze is a simple tool to gather data and statistics about Youtube channel.</p>
+                        <p>To use YT Analyze you'll need a Youtube Key and a youtube channel URL (the one with the channel ID).</p>
+                        <br>
+                        <h3>How to obtain an youtube key?</h3>
+                        <p>Coming soon</p>
+                        <br>
+                        <h3>How can I find the right youtube channel URL?</h3>
+                        <p>To get the youtube channel URL you'll need you can just access any video of the channel and then look fot the channel's name and logo just bellow the main video frame. Right-click over the channel's name or logo and select "Copy link address".</p>
+                    </div>
+                    <div id="tab-overview-content" class="tab-content none"></div>
+                    <div id="tab-graphics-content" class="tab-content none"></div>
+                    <div id="tab-analysis-content" class="tab-content none"></div>
+                    
                 </div>
             </div>
         </section>
