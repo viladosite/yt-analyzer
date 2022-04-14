@@ -7,7 +7,6 @@
     padding-inline-start: 0;
 }
 
-
 /* TEXTS */
 li {
     line-height: 40px;
@@ -33,7 +32,7 @@ header div {
     align-items: center;
 }
 
-/* HEADE BOXES */
+/* HEADER BOXES */
 
 /* Language */
 #language{
@@ -61,7 +60,8 @@ header div {
 
 /* Title */
 #title{
-    width: 40%;
+    cursor: pointer;
+    width: 20%;
 }
 
 
@@ -107,42 +107,59 @@ i {
     width: 100%;
 }
 
+
 /* SECTIONS */
 section {
     padding: 20px;
 }
 
-
-/* Overview Section */
-#overview{
-    height: 500px;
+/* CONTENT SECTION */
+#content{
+    
+}
+#contentBox{
+    border: 1px solid brown;
+}
+#tabContent{
+    padding: 20px 25px 15px 25px;
 }
 
-#overTabs{
+/* TABS */
+#tabs{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-
-#overTabs div {
+#tabs div {
     width: 100%;
     padding: 5px 15px;
     border-bottom: solid 1px brown;
+    border-left: solid 1px brown;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    cursor: pointer;
+}
+.activeTab{
+    border: solid brown 1px;
+    background-color: brown;
+    color: white;
+}
+.activeTab span{
+    color: white;
 }
 
+/* TAB OVERVIEW */
 #overTabContent{
-    padding: 20px 25px 15px 25px;
+    padding: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-around;
     align-items: flex-start;
 }
 
 #overTabBasic{
-    width: 10%;
+    width: 20%;
     margin: 0 30px;
     display: flex;
     flex-direction: column;
@@ -150,35 +167,21 @@ section {
     align-items: center;
 }
 
-#overTabDetails, #overTabNumbers{
+#overTabBasic a {
+    display: inline-block;
+    text-align:center;
+}
+
+#overTabDetails{
     width: 40%;
 }
 
-
-/* TABS */
-
-.activeTab{
-    border: solid brown 1px;
-    background-color: brown;
-    color: white;
-}
-
-.activeTab span{
-    color: white;
-}
-
-.inactiveTab{
-    border-left: solid brown 1px;
+#overTabNumbers{
+    width: 20%;
 }
 
 
-#overContent{
-    border: 1px solid brown;
-    height: 100%;
-}
-
-
-/* Download Section */
+/* DOWNLOAD SECTION */
 #download{
     height: 150px;
 }
