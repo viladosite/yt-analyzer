@@ -8,6 +8,8 @@ function toggleMenu(menuName){
 // TABS FUNCTIONS
 // channelObj: json of channel to load on tabs
 function loadTabs(channelObj){
+    let key = getKey();
+    var playlists = getPlaylistFromChannel(key, channelObj.id);
     var tabOverTemplate = `
         <div id="overTabTitle">
             <h2>About ${channelObj.name}'s channel</h2>
@@ -20,13 +22,13 @@ function loadTabs(channelObj){
                 </a>
                 <br>
                 <h3>Creation Date:</h3>
-                <p>${channelObj.dateCreated}</p>
+                <p>${new Date(channelObj.dateCreated).toLocaleDateString('pt-BR')}</p>
                 <h3>Total views:</h3>
-                <p>${channelObj.totalViews}</p>
+                <p>${Number(channelObj.totalViews).toLocaleString('pt-BR')}</p>
                 <h3>Videos Count:</h3>
-                <p>${channelObj.videosQt}</p>
+                <p>${Number(channelObj.videosQt).toLocaleString('pt-BR')}</p>
                 <h3>Subscriptions:</h3>
-                <p>${channelObj.subscriptions}</p>
+                <p>${Number(channelObj.subscriptions).toLocaleString('pt-BR')}</p>
             </div>
             <div id="overTabDetails">
                 <h3>Description:</h3>
@@ -45,20 +47,38 @@ function loadTabs(channelObj){
         </div>
     `;
 
+
+
     document.getElementById(`channelTitle`).textContent = ' - ' + channelObj.name;
     document.getElementById(`tab-overview-content`).innerHTML = tabOverTemplate;
-    document.getElementById(`tab-graphics-content`).innerHTML = "Em breve";
-    document.getElementById(`tab-analysis-content`).innerHTML = "Em breve";
+    document.getElementById(`tab-playlists-content`).innerHTML = "Coming soon: Playlists";
+    document.getElementById(`tab-graphics-content`).innerHTML = "Coming soon: Graphics and Analysis";
+    
+    document.getElementById(`tab-overview`).classList.add('activeTab');
 }
+
 
 function tabChange(tabId){
+    var getTabs = document.getElementById(`tabs`).children;
+    var tabsArray = Array.prototype.slice.call(getTabs);
+    document.getElementById(`tab-start-content`).classList.add('none');
 
+    tabsArray.forEach(element => {
+        if (element.id.includes(tabId)){
+            document.getElementById(`${element.id}`).classList.add('activeTab');
+            document.getElementById(`${element.id}-content`).classList.remove('none');
+        } else {
+            document.getElementById(`${element.id}`).classList.remove('activeTab');
+            document.getElementById(`${element.id}-content`).classList.add('none');
+        }
+    });
 }
+
 
 // SEARCH FUNCTIONS
 async function searchChannel(){
     var channelURL = document.getElementById('channelSelect').value;
-    var key = getKey();
+    let key = getKey();
     var channel = [];
 
     if (channelURL == '' || channelURL == null || key == '' || key == null){
@@ -67,51 +87,7 @@ async function searchChannel(){
         var id = getIdFromURL(channelURL);
         var channelData = await getChannelData(key, id);
         channel = setChannel(channelData)[0];
-
-/*
-            var templateAbout = `
-            <div id="overTabTitle">
-                <h2>About ${channel.name}'s channel</h2>
-            </div>
-            <div id="overTabContent">
-                <div id="overTabBasic">
-                    <a href="https://www.youtube.com/channel/${channel.id}" target="_blank">
-                        <img src="${channel.avatar}">
-                        <h2>${channel.name}</h2>
-                    </a>
-                    <br>
-                    <h3>Creation Date:</h3>
-                    <p>${channel.dateCreated}</p>
-                    <h3>Total views:</h3>
-                    <p>${channel.totalViews}</p>
-                    <h3>Videos Count:</h3>
-                    <p>${channel.videosQt}</p>
-                    <h3>Subscriptions:</h3>
-                    <p>${channel.subscriptions}</p>
-                </div>
-                <div id="overTabDetails">
-                    <h3>Description:</h3>
-                    <p>${channel.description}</p>
-                </div>
-                <div id="id="overTabNumbers"">
-                    <h3>Links:</h3>
-                    <p>${channel.link}</p>
-                    <h3>Average Video Time:</h3>
-                    <p>${channel.averageVideoTime}</p>
-                    <h3>Average Video Likes:</h3>
-                    <p>${channel.averageVideoLikes}</p>
-                    <h3>Average Video Comments:</h3>
-                    <p>${channel.averageVideoComments}</p>
-                </div>
-            </div>
-        `;
-
-        document.getElementById('channelTitle').innerHTML = '- ' + channel.name;
-        document.getElementById('tabContent').innerHTML = templateAbout;
- */
-
     }
-
     loadTabs(channel);
     tabChange('overview');
 }

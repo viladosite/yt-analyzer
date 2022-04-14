@@ -21,6 +21,15 @@ async function getChannelData(userKey, channelId){
     return fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=id,snippet,brandingSettings,contentDetails,statistics,topicDetails&id=${channelId}&key=${userKey}`).then(result => result.json());
 }
 
+async function getPlaylistFromChannel(userKey, channelId){
+    return fetch(`https://www.googleapis.com/youtube/v3/playlists?part=id,snippet,status&channelId=${channelId}&key=${userKey}`).then(result => result.json());
+}
+
+async function getVideosFromPlaylist(userKey, playlistId){
+    return fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails,status&playlistId=${playlistId}&key=${userKey}`).then(result => result.json());
+}
+
+
 
 
 // MODEL FUNCTIONS
@@ -51,16 +60,17 @@ function setChannel(channelObj){
     return channel;
 }
 
+function setPlaylist(playlistObj){
+    var playlist = [];
 
-
-// PLAYLIST FUNCTIONS
-function getPlaylists(channelId){
-
-}
-
-
-
-// VIDEO FUNCTIONS
-function getVideos(playlistId){
-
+    playlist.push({
+        id:playlistObj.items.id,
+        publishedAt:playlistObj.items.snippet.publishedAt,
+        title:playlistObj.items.snippet.title,
+        description:playlistObj.items.snippet.description,
+        thumbnail:playlistObj.items.snippet.thumbnails.default.url,
+        averageVideoTime:"int",
+        averageVideoLikes:"int",
+        averageVideoComments:"int"
+    })
 }

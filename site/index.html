@@ -10,7 +10,7 @@
         <script src="js/langfunctions.js"></script>
         <script src="js/datafunctions.js"></script>
         <script src="https://kit.fontawesome.com/72f776e9bb.js" crossorigin="anonymous"></script>
-        <title>Document</title>
+        <title>YT Analyze</title>
     </head>
     <header>
         <div id="language">
@@ -36,7 +36,7 @@
             <input id="ytKey" type="text" class="textInput" placeholder="Youtube Key Here" value="AIzaSyC8_l4yakCse6xv3ADLJTcY3S68xxr89R4">
         </div>
         <div id="channel">
-            <input id="channelSelect" class="textInput" type="text" placeholder="https://www.youtube.com/channel/XXXXXXXXXXXXX" value="https://www.youtube.com/channel/UCEWHPFNilsT0IfQfutVzsag">
+            <input id="channelSelect" class="textInput" type="text" placeholder="https://www.youtube.com/channel/XXXXXXXXXXXXX" value="https://www.youtube.com/channel/UCzEIIlOJOJLWJCTXxZQuNaw">
             <div class="iconContainer" onClick="searchChannel()">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
@@ -46,9 +46,9 @@
         <section id="content">
             <div id="contentBox">
                 <div id="tabs">
-                    <div id="tab-overview" class="activeTab" onclick="tabChange(this.id)">Overview&nbsp;<span id="channelTitle"></span></div>
-                    <div id="tab-graphics" onclick="tabChange(this.id)">Graphics and Statistics</div>
-                    <div id="tab-analysis" onclick="tabChange(this.id)">Analysis</div>
+                    <div id="tab-overview" onclick="tabChange(this.id)">Overview&nbsp;<span id="channelTitle"></span></div>
+                    <div id="tab-playlists" onclick="tabChange(this.id)">Playlists</div>
+                    <div id="tab-graphics" onclick="tabChange(this.id)">Graphics and Analysis</div>
                 </div>
                 <div id="tabContent">
                     <div id="tab-start-content" class="tab-content">
@@ -63,9 +63,8 @@
                         <p>To get the youtube channel URL you'll need you can just access any video of the channel and then look fot the channel's name and logo just bellow the main video frame. Right-click over the channel's name or logo and select "Copy link address".</p>
                     </div>
                     <div id="tab-overview-content" class="tab-content none"></div>
+                    <div id="tab-playlists-content" class="tab-content none"></div>
                     <div id="tab-graphics-content" class="tab-content none"></div>
-                    <div id="tab-analysis-content" class="tab-content none"></div>
-                    
                 </div>
             </div>
         </section>
