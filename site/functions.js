@@ -1,15 +1,17 @@
 // LANG MENU FUNCTIONS
-
 function langMenu(){
     let menu = document.getElementById('langOptions');
     menu.classList.toggle("none")
 }
 
+
+
+
 // TABS FUNCTIONS
 // channelObj: json of channel to load on tabs
-function loadTabs(channelObj){
+async function loadTabs(channelObj){
     let key = getKey();
-    var playlists = getPlaylistFromChannel(key, channelObj.id);
+    var playlists = await getPlaylistFromChannel(key, channelObj.id);
     var tabOverTemplate = `
         <div id="overTabTitle">
             <h2>About ${channelObj.name}'s channel</h2>
@@ -46,18 +48,28 @@ function loadTabs(channelObj){
             </div>
         </div>
     `;
+    var tabPlaylistsTemplate = `
+        <div>
+            <p>ID: </p>
+            <p>Published at </p>
+            <p>Title: </p>
+            <p>Description: </p>
+            <p>Thumbnail: </p>
+            <p>AverageVideoTime: </p>
+            <p>AverageVideoLikes: </p>
+            <p>AverageVideoComments: </p>
+        </div>
+    `;
 
 
 
     document.getElementById(`channelTitle`).textContent = ' - ' + channelObj.name;
     document.getElementById(`tab-overview-content`).innerHTML = tabOverTemplate;
-    document.getElementById(`tab-playlists-content`).innerHTML = "Coming soon: Playlists";
+    document.getElementById(`tab-playlists-content`).innerHTML = tabPlaylistsTemplate;
     document.getElementById(`tab-graphics-content`).innerHTML = "Coming soon: Graphics and Analysis";
     
     document.getElementById(`tab-overview`).classList.add('activeTab');
 }
-
-// GET DATA FUNCTIONS
 
 function tabChange(tabId){
     var getTabs = document.getElementById(`tabs`).children;
@@ -91,4 +103,23 @@ async function searchChannel(){
     }
     loadTabs(channel);
     tabChange('overview');
+}
+
+
+// DRAW ITEMS FUNCTIONS
+function drawPlaylist(playlistObj){
+    
+/*     
+    <div>
+        <p>ID: </p>
+        <p>Published at </p>
+        <p>Title: </p>
+        <p>Description: </p>
+        <p>Thumbnail: </p>
+        <p>AverageVideoTime: </p>
+        <p>AverageVideoLikes: </p>
+        <p>AverageVideoComments: </p>
+    </div>
+*/
+
 }
