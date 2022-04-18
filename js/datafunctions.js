@@ -18,15 +18,15 @@ function getIdFromURL(url){
 
 
 async function getChannelData(userKey, channelId){
-    return fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=id,snippet,brandingSettings,contentDetails,statistics,topicDetails&id=${channelId}&key=${userKey}`).then(result => result.json());
+    return fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=id,snippet,brandingSettings,contentDetails,statistics,topicDetails&maxResults=50&id=${channelId}&key=${userKey}`).then(result => result.json());
 }
 
 async function getPlaylistFromChannel(userKey, channelId){
-    return fetch(`https://www.googleapis.com/youtube/v3/playlists?part=id,snippet,status&channelId=${channelId}&key=${userKey}`).then(result => result.json());
+    return fetch(`https://www.googleapis.com/youtube/v3/playlists?part=id,snippet,status&maxResults=50&channelId=${channelId}&key=${userKey}`).then(result => result.json());
 }
 
 async function getVideosFromPlaylist(userKey, playlistId){
-    return fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails,status&playlistId=${playlistId}&key=${userKey}`).then(result => result.json());
+    return fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails,status&maxResults=50&playlistId=${playlistId}&key=${userKey}`).then(result => result.json());
 }
 
 
