@@ -9,5 +9,23 @@
     "avatar":"int",
     "averageVideoTime":"int",
     "averageVideoLikes":"int",
-    "averageVideoComments":"int"
+    "averageVideoComments":"int",
+    "playlists": [
+        {
+            "id": "number",
+            "publishedAt": "date",
+            "title": "string",
+            "description": "string",
+            "thumbnail": "string",
+            "videos": [
+                {
+                    "id": "string",
+                    "publishedAt": "date",
+                    "title": "string",
+                    "description": "string",
+                    "thumbnail": "string"
+                }
+            ]
+        }
+    ]
 }
