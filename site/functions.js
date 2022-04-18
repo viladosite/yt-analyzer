@@ -123,3 +123,15 @@ function drawPlaylist(playlistObj){
 */
 
 }
+
+
+
+// OBJECT SET FUNCTIONS
+function setChannelObj(key, channelId){
+    let rawChannel = getChannelData(key, channelId);
+    let rawPlaylists = getPlaylistFromChannel(key, channelId);
+    let rawVideos = '';
+
+
+    
+}
